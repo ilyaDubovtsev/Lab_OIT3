@@ -3,7 +3,6 @@
   <head>
     <title>Lab</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,18 +12,9 @@
     <div class="container">
       <div class="grid">
         <header>
-          <a href="index.html"><img src="static/logo.png" class = "logo"></a>
+          <%= link_to image_tag('layout/logo.png', class: 'logo'), url_for({:controller => 'pages', :action => 'index'})%>
         </header>
-        <nav>
-          <div class="menu">
-            <a href="http://google.com">Гугол</a>
-            <a href="http://yandex.ru">Яндекс</a>
-            <a href="http://yahoo.com">Yahoo</a>
-          </div>
-        </nav>
-        <section id="content">
-          <%= yield %>
-        </section>
+        <%= yield %>
         <footer>
           <p>Designed "Крутые Интернет Технологии"</p>
           <p>2018</p>
