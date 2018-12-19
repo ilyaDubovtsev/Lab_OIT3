@@ -13,3 +13,130 @@
  *= require_tree .
  *= require_self
  */
+body{
+    min-height:100vh;
+    margin: 0;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: verdana, serif;
+}
+
+.container{
+    background: linear-gradient(#3498db, #FFFFFF 10%, #FFFFFF 90%, #3498db 100%);
+    min-height:100vh;
+}
+
+.grid {
+    min-height: 100%;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: 1fr 4fr 1fr 1fr;
+    grid-template-rows: 200px auto 100px;
+    grid-template-areas:
+            ". header header ."
+            ". content nav ."
+                /* ". section nav ." */
+            ". footer footer."
+}
+
+.grid > * {
+    padding: 10px;
+}
+
+
+header {
+    grid-area: header;
+    background-color: #28314E;
+    text-align: center;
+}
+
+nav{
+    grid-area: nav;
+    background-color:  #475477;
+}
+
+article {
+    grid-area: article;
+    text-align: justify;
+}
+
+#content {
+    grid-area: content;
+    min-height: calc(100vh - 250px);
+    background-color:  #475477;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #28314E;
+    text-align: center;
+}
+
+.logo{
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.logo:hover{
+    margin-top: -2px;
+    border: solid 2px white;
+}
+
+.menu > * {
+    margin-bottom: -1px;
+    color: white;
+    display: block;
+    width: 100%;
+    height: auto;
+    border: solid 2px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.menu > *:hover {
+    background-color: #28314E;
+}
+
+.toTop {
+    display: none;
+    width: 11%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #f7f7f7;
+    text-align: center;
+    padding: 7px;
+    position: fixed;
+    bottom: 5%; /* отступ кнопки от нижнего края страницы*/
+    left: 11px;
+    cursor: pointer;
+    color: #333;
+}
+
+.cooltable{
+    width: 100%;
+    border-spacing: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr auto minmax(100px, auto);
+        grid-template-areas:
+                "header"
+                "nav"
+                "content"
+                "footer";
+    }
+    aside{
+        display: none;
+    }
+    .menu > * {
+        font-size: 30pt;
+        padding: 40px 0 40px 0;
+    }
+}

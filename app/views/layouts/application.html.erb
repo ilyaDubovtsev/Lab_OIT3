@@ -9,6 +9,28 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class = "toTop"> Наверх! </div>
+    <div class="container">
+      <div class="grid">
+        <header>
+          <a href="index.html"><img src="static/logo.png" class = "logo"></a>
+        </header>
+        <nav>
+          <div class="menu">
+            <a href="http://google.com">Гугол</a>
+            <a href="http://yandex.ru">Яндекс</a>
+            <a href="http://yahoo.com">Yahoo</a>
+          </div>
+        </nav>
+        <section id="content">
+          <%= yield %>
+        </section>
+        <footer>
+          <p>Designed "Крутые Интернет Технологии"</p>
+          <p>2018</p>
+        </footer>
+        </grid>
+      </div>
+    </div>
   </body>
 </html>
