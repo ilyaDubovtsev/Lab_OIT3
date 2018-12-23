@@ -1,0 +1,12 @@
+<%= render 'articles/navbar' %>
+<section id="content">
+  <h2><%=@article.title %></h2>
+  <p><%=@article.text %></p>
+  <%= image_tag (@article.img), class: 'article-img'%>
+
+  <%= link_to "Edit", edit_article_path(@article), class: 'article-btn' %>
+  <%= link_to "Delete", article_path(@article),
+              method: :delete,
+              data: {confirm: 'Are you sure?'},
+              class: 'article-btn-destroy' %>
+</section>

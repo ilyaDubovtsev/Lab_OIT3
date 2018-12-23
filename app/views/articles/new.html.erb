@@ -1,0 +1,26 @@
+<%= render 'articles/navbar' %>
+<section id="content">
+  <h1>Create a new Article</h1>
+  <%= form_for :article, url: articles_path do |a| %>
+    <%if @article.errors.any? %>
+      <% @article.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+      <% end %>
+    <% end %>
+    <p>
+      <%= a.label :title %><br>
+      <%= a.text_field :title, class: 'article-form-fiels' %>
+    </p>
+    <p>
+      <%= a.label :text %><br>
+      <%= a.text_area :text, class: 'article-form-fiels' %>
+    </p>
+    <p>
+      <%= a.label :img %><br>
+      <%= a.text_field :img, class: 'article-form-fiels' %>
+    </p>
+    <p>
+      <%= a.submit class: 'article-form-btn'%>
+    </p>
+  <% end %>
+</section>

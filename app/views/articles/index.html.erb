@@ -1,10 +1,12 @@
-<nav>
-  <div class="menu">
-    <a href="http://google.com">Гугол</a>
-    <a href="http://yandex.ru">Яндекс</a>
-    <a href="http://yahoo.com">Yahoo</a>
-  </div>
-</nav>
+<%= render 'articles/navbar' %>
 <section id="content">
-  <%= @name %>
+  <h2>Articles</h2>
+  <% for article in @articles do%>
+    <a href="<%= url_for article %>">
+      <article>
+        <h3><%= article.title %></h3>
+        <p><%= article.text %></p>
+      </article>
+    </a>
+  <% end %>
 </section>
