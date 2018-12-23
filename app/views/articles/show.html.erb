@@ -9,4 +9,5 @@
               method: :delete,
               data: {confirm: 'Are you sure?'},
               class: 'article-btn-destroy' %>
+  <%= render 'articles/users', locals: {articles: @users_count}%>
 </section>

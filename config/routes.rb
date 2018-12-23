@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :articles
   root "articles#index"
 
+  get 'add_a_fake_user', to: 'activities#add_a_fake_user'
+
 end

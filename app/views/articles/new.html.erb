@@ -23,4 +23,5 @@
       <%= a.submit class: 'article-form-btn'%>
     </p>
   <% end %>
+  <%= render 'articles/users', locals: {articles: @users_count}%>
 </section>
