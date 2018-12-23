@@ -1,4 +1,4 @@
-<%= render 'articles/navbar' %>
+<%= render 'articles/navbar', locals: {articles: @articles}%>
 <section id="content">
   <h1>Create a new Article</h1>
   <%= form_for :article, url: articles_path do |a| %>

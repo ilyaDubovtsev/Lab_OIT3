@@ -1,4 +1,4 @@
-<%= render 'articles/navbar' %>
+<%= render 'articles/navbar', locals: {articles: @articles}%>
 <section id="content">
   <h2><%=@article.title %></h2>
   <p><%=@article.text %></p>
